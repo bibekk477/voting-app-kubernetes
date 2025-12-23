@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-app-deployment
+  labels:
+    component: worker
+    app: demo-voting-app
+spec:
+  replicas: 1 # increase if you want multiple workers
+  selector:
+    matchLabels:
+      component: worker
+      app: demo-voting-app
+  template:
+    metadata:
+      labels:
+        component: worker
+        app: demo-voting-app
+    spec:
+      containers:
+        - name: voting-app-worker
+          image: bibekk477/voting-app-worker:v1

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-app-deployment
+  labels:
+    component: result
+    app: demo-voting-app
+spec:
+  replicas: 1 # increase for high availability
+  selector:
+    matchLabels:
+      component: result
+      app: demo-voting-app
+  template:
+    metadata:
+      labels:
+        component: result
+        app: demo-voting-app
+    spec:
+      containers:
+        - name: voting-app-result
+          image: bibekk477/voting-app-result:v1
+          ports:
+            - containerPort: 80
