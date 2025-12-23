@@ -110,9 +110,9 @@ All pods should be in the Running state.
 
 # Common Operations
 
+```bash
 ## Scaling Replicas
 
-```bash
 kubectl scale deployment <deployment-name> --replicas=3
 
 ## Follow logs in real-time
