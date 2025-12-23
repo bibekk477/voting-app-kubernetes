@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: worker-app-pod
+  labels:
+    component: worker
+    app: demo-voting-app #same since all pods are part of the same application
+spec:
+  containers:
+    - name: voting-app-worker
+      image: bibekk477/voting-app-worker:v1
+      #no ports needed as this is a worker pod that does not serve traffic ie no service listening
