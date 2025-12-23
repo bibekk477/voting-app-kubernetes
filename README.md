@@ -112,7 +112,7 @@ All pods should be in the Running state.
 
 ## Scaling Replicas
 
-kubectl scale deployment <deployment-name> --replicas=3
+- kubectl scale deployment <deployment-name> --replicas=3
 
 ## Follow logs in real-time
 
@@ -156,5 +156,7 @@ bashkubectl describe pod <pod-name>
 
 ## Check Service Connectivity
 
-bashkubectl describe svc <service-name>
+```bash
+kubectl describe svc <service-name>
 kubectl get endpoints <service-name>
+```
